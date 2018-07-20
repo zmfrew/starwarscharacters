@@ -7,36 +7,37 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Star Wars Characters-->
+        <!--Characters-->
         <scene sceneID="NfD-BD-ypF">
             <objects>
-                <tableViewController id="OdU-8L-aSe" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VdK-hA-4VA">
+                <tableViewController id="OdU-8L-aSe" customClass="IndividualsTableViewController" customModule="StarWarsProfiles" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="VdK-hA-4VA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="individualCell" rowHeight="66" id="O7T-gc-VlE" customClass="IndividualTableViewCell" customModule="StarWarsProfiles" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="66"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="individualCell" rowHeight="70" id="O7T-gc-VlE" customClass="IndividualTableViewCell" customModule="StarWarsProfiles" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O7T-gc-VlE" id="RN0-pc-l1W">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="emh-5y-QRC">
-                                            <rect key="frame" x="8" y="8" width="120.5" height="50"/>
+                                            <rect key="frame" x="8" y="8" width="124" height="53.5"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RZo-Io-R6m">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="53.5" height="53.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="RZo-Io-R6m" secondAttribute="height" multiplier="1:1" id="Lrw-rG-iTW"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(name)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0G8-pt-CiV">
-                                                    <rect key="frame" x="66" y="0.0" width="54.5" height="50"/>
+                                                    <rect key="frame" x="69.5" y="0.0" width="54.5" height="53.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -53,6 +54,7 @@
                                 <connections>
                                     <outlet property="individualImageView" destination="RZo-Io-R6m" id="Zna-D9-Nal"/>
                                     <outlet property="nameLabel" destination="0G8-pt-CiV" id="hyK-V4-0N8"/>
+                                    <segue destination="G9t-R7-rZz" kind="show" identifier="toIndividualDetail" id="0jX-aw-bQI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -61,11 +63,26 @@
                             <outlet property="delegate" destination="OdU-8L-aSe" id="JRG-74-39x"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Star Wars Characters" id="kMG-bX-6Ga"/>
+                    <navigationItem key="navigationItem" title="Characters" id="kMG-bX-6Ga"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vns-yQ-Pok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="191.19999999999999" y="262.21889055472263"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Hy8-87-0b2">
+            <objects>
+                <viewController id="G9t-R7-rZz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vfq-WE-sSP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5hU-tW-Tr8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wTO-1A-JGK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="262"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vgy-mJ-KfT">

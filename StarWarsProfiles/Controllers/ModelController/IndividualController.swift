@@ -14,7 +14,7 @@ class IndividualController {
     static let baseURL = URL(string: "https://starwarstest16.herokuapp.com/api/characters")
     
     // MARK: - Methods
-    func retrieveIndividuals(completion: @escaping ([Individual]) -> Void) {
+    static func retrieveIndividuals(completion: @escaping ([Individual]?) -> Void) {
         guard let url = IndividualController.baseURL else { completion([]) ; return }
         
         URLSession.shared.dataTask(with: url) { (data, _, error) in
@@ -28,8 +28,7 @@ class IndividualController {
             
             do {
                 let individualsDict = try JSONDecoder().decode([String: [Individual]].self, from: data)
-                guard let individuals = individualsDict["individuals"] else { completion([]) ; return }
-                print(individuals)
+                guard let individuals = individualsDict["individuals"] else { completion([]) ; return }                
                 completion(individuals)
             } catch {
                 print("Error occurred decoding data from JSON: \(error.localizedDescription).")
@@ -38,7 +37,7 @@ class IndividualController {
         }.resume()
     }
     
-    func retrieveIndividualImage(_ individual: Individual, completion: @escaping ((UIImage?) -> Void)) {
+    static func retrieveIndividualImage(_ individual: Individual, completion: @escaping ((UIImage?) -> Void)) {
         guard let url = URL(string: individual.imageURLAsString) else {
             print("Error occurred with converting provided image URL.")
             completion(nil)

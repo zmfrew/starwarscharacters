@@ -15,6 +15,7 @@
 		B6DCED7D21015D8E008F45AB /* IndividualController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DCED7C21015D8E008F45AB /* IndividualController.swift */; };
 		B6DCED7F21016446008F45AB /* IndividualTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DCED7E21016446008F45AB /* IndividualTableViewCell.swift */; };
 		B6DCED8121016814008F45AB /* IndividualsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DCED8021016814008F45AB /* IndividualsTableViewController.swift */; };
+		B6DCED8521016D6D008F45AB /* IndividualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DCED8421016D6D008F45AB /* IndividualViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B6DCED7C21015D8E008F45AB /* IndividualController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualController.swift; sourceTree = "<group>"; };
 		B6DCED7E21016446008F45AB /* IndividualTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualTableViewCell.swift; sourceTree = "<group>"; };
 		B6DCED8021016814008F45AB /* IndividualsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualsTableViewController.swift; sourceTree = "<group>"; };
+		B6DCED8421016D6D008F45AB /* IndividualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				B6DCED8021016814008F45AB /* IndividualsTableViewController.swift */,
+				B6DCED8421016D6D008F45AB /* IndividualViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6DCED7F21016446008F45AB /* IndividualTableViewCell.swift in Sources */,
+				B6DCED8521016D6D008F45AB /* IndividualViewController.swift in Sources */,
 				B6DCED7B21015ACF008F45AB /* Individual.swift in Sources */,
 				B6DCED6321015A56008F45AB /* AppDelegate.swift in Sources */,
 				B6DCED8121016814008F45AB /* IndividualsTableViewController.swift in Sources */,
