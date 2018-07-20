@@ -37,29 +37,4 @@ class IndividualController {
         }.resume()
     }
     
-    static func retrieveIndividualImage(_ individual: Individual, completion: @escaping ((UIImage?) -> Void)) {
-        guard let url = URL(string: individual.imageURLAsString) else {
-            print("Error occurred with converting provided image URL.")
-            completion(nil)
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
-            if let error = error {
-                print("Error occurred retrieving the image: \(error.localizedDescription).")
-                completion(nil)
-                return
-            }
-            
-            guard let data = data else {
-                print("No data was received for the individual image.")
-                completion(nil)
-                return
-            }
-
-            let image = UIImage(data: data)
-            completion(image)
-        }.resume()
-    }
-    
 }

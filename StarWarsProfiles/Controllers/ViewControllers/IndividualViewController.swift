@@ -30,12 +30,18 @@ class IndividualViewController: UIViewController {
     func updateViews() {
         guard let individual = individual else { return }
         imageView.image = UIImage(named: individual.firstName.lowercased())
+        let height = imageView.frame.height
+        let width = imageView.frame.width
+        imageView.layer.cornerRadius = height > width ? width / 2 : height / 2
+        imageView.layer.masksToBounds = true
+        imageView.clipsToBounds = true
         nameLabel.text = "\(individual.firstName) \(individual.lastName)"
         birthdateLabel.text = individual.birthdate
-        let forceString = individual.hasForce ? "The force is strong in this one." : "This one does not use the force."
+        let forceString = individual.hasForce ? "The force is strong in this one." : "The force is not strong in this one."
         hasForceLabel.text = forceString
         affiliationLabel.text = individual.affiliation
     }
     
+   
     
 }
