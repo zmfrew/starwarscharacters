@@ -24,16 +24,7 @@ class IndividualTableViewCell: UITableViewCell {
     // MARK: - Methods
     func updateViews() {
         guard let individual = individual else { return }
-        IndividualController.retrieveIndividualImage(individual) { (image) in
-            DispatchQueue.main.async {
-                // FIXIT: Update image check to use nil coalescing
-                if let image = image {
-                    self.individualImageView.image = image
-                } else {
-                    self.individualImageView.image = UIImage(named: "starwars")
-                }
-            }
-        }
+        individualImageView.image = UIImage(named: individual.firstName.lowercased())
         nameLabel.text = "\(individual.firstName) \(individual.lastName)"
     }
     

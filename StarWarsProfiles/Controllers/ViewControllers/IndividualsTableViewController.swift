@@ -39,7 +39,11 @@ class IndividualsTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "toIndividualDetail" {
+            guard let destinationVC = segue.destination as? IndividualViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            let individual = individuals[indexPath.row]
+            destinationVC.individual = individual
+        }
     }
 
 }
