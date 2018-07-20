@@ -14,7 +14,7 @@ struct Individual: Codable {
     let firstName: String
     let lastName: String
     let birthdate: String
-    let imageURLAsString: String?
+    let imageURLAsString: String
     let hasForce: Bool
     let affiliation: String
     

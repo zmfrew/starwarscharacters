@@ -14,6 +14,7 @@
 		B6DCED7B21015ACF008F45AB /* Individual.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DCED7A21015ACF008F45AB /* Individual.swift */; };
 		B6DCED7D21015D8E008F45AB /* IndividualController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DCED7C21015D8E008F45AB /* IndividualController.swift */; };
 		B6DCED7F21016446008F45AB /* IndividualTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DCED7E21016446008F45AB /* IndividualTableViewCell.swift */; };
+		B6DCED8121016814008F45AB /* IndividualsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DCED8021016814008F45AB /* IndividualsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B6DCED7A21015ACF008F45AB /* Individual.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Individual.swift; sourceTree = "<group>"; };
 		B6DCED7C21015D8E008F45AB /* IndividualController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualController.swift; sourceTree = "<group>"; };
 		B6DCED7E21016446008F45AB /* IndividualTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualTableViewCell.swift; sourceTree = "<group>"; };
+		B6DCED8021016814008F45AB /* IndividualsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndividualsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		B6DCED7521015A71008F45AB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B6DCED8021016814008F45AB /* IndividualsTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				B6DCED7F21016446008F45AB /* IndividualTableViewCell.swift in Sources */,
 				B6DCED7B21015ACF008F45AB /* Individual.swift in Sources */,
 				B6DCED6321015A56008F45AB /* AppDelegate.swift in Sources */,
+				B6DCED8121016814008F45AB /* IndividualsTableViewController.swift in Sources */,
 				B6DCED7D21015D8E008F45AB /* IndividualController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

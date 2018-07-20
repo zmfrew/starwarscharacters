@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="individualCell" rowHeight="66" id="O7T-gc-VlE">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="individualCell" rowHeight="66" id="O7T-gc-VlE" customClass="IndividualTableViewCell" customModule="StarWarsProfiles" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O7T-gc-VlE" id="RN0-pc-l1W">
@@ -50,6 +50,10 @@
                                         <constraint firstItem="emh-5y-QRC" firstAttribute="leading" secondItem="RN0-pc-l1W" secondAttribute="leading" constant="8" id="xkY-0R-YSv"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="individualImageView" destination="RZo-Io-R6m" id="Zna-D9-Nal"/>
+                                    <outlet property="nameLabel" destination="0G8-pt-CiV" id="hyK-V4-0N8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

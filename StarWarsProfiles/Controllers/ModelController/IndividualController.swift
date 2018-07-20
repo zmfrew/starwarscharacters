@@ -6,7 +6,7 @@
 //  Copyright © 2018 Zachary Frew. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class IndividualController {
     
@@ -16,6 +16,7 @@ class IndividualController {
     // MARK: - Methods
     func retrieveIndividuals(completion: @escaping ([Individual]) -> Void) {
         guard let url = IndividualController.baseURL else { completion([]) ; return }
+        
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 print("Error occurred retrieving data: \(error.localizedDescription).")
@@ -37,5 +38,29 @@ class IndividualController {
         }.resume()
     }
     
+    func retrieveIndividualImage(_ individual: Individual, completion: @escaping ((UIImage?) -> Void)) {
+        guard let url = URL(string: individual.imageURLAsString) else {
+            print("Error occurred with converting provided image URL.")
+            completion(nil)
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (data, _, error) in
+            if let error = error {
+                print("Error occurred retrieving the image: \(error.localizedDescription).")
+                completion(nil)
+                return
+            }
+            
+            guard let data = data else {
+                print("No data was received for the individual image.")
+                completion(nil)
+                return
+            }
+
+            let image = UIImage(data: data)
+            completion(image)
+        }.resume()
+    }
     
 }

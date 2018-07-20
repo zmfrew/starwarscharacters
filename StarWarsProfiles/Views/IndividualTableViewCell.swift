@@ -10,15 +10,25 @@ import UIKit
 
 class IndividualTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - Outlets
+    @IBOutlet weak var individualImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    // MARK: - Properties
+    var individual: Individual? {
+        didSet {
+            updateViews()
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    var individualImage: UIImage?
+    
+    // MARK: - Methods
+    func updateViews() {
+        guard let individual = individual,
+            let individualImage = individualImage ?? UIImage(named: "starwars")
+            else { return }
+        nameLabel.text = "\(individual.firstName) \(individual.lastName)"
+        individualImageView.image = individualImage
     }
-
+    
 }
